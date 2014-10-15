@@ -3,7 +3,7 @@
 
 Prerequisites
 
-- Install Xcode and the Xcode command line tools from the terminal
+- Install Xcode and the Xcode command line tools from the App Store.
 
 Installation
 
