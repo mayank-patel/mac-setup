@@ -5,6 +5,10 @@ if test ! $(which brew); then
   ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 fi
 
+echo export PATH='/usr/local/bin:$PATH' >> ~/.bash_profile
+
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin
+
 # Update homebrew recipes
 brew update
 
@@ -49,6 +53,9 @@ brew cleanup
 // Install Homebrew Cask
 brew install caskroom/cask/brew-cask
 
+// Allows to install pre release version of applications.
+brew tap caskroom/versions
+
 # Apps
 apps=(
   alfred
@@ -65,14 +72,23 @@ apps=(
   mailbox
   quicklook-json
   skype
+  webstorm
+  sourcetree
+  brackets
+  filezilla
+  google-chrome-canary
+  google-drive
+  evernote
+  hipchat
+  vox
+  sequel-pro
+  dash
 )
 
 # Install apps to /Applications
 # Default is: /Users/$user/Applications
 echo "installing apps..."
 brew cask install --appdir="/Applications" ${apps[@]}
-
-# brew cask alfred link
 
 brew tap caskroom/fonts
 
@@ -88,4 +104,10 @@ fonts=(
 # install fonts
 echo "installing fonts..."
 brew cask install ${fonts[@]}
+
+gem install compass
+
+npm install -g grunt-cli gulp bower karma nodemon mocha meanio yo cordova pm2 forever
+
+curl -L http://install.ohmyz.sh | sh
 
