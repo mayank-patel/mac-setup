@@ -110,6 +110,4 @@ touch ~/.profile
 # Install nvm 
 curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
 
-nvm install stable
-
-nvm use stable
+ln -s ~/.profile .zprofile
