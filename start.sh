@@ -12,9 +12,6 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin
 # Update homebrew recipes
 brew update
 
-# Install GNU core utilities (those that come with OS X are outdated)
-brew install coreutils
-
 # Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
 brew install findutils
 
@@ -36,7 +33,6 @@ binaries=(
   rename
   sshfs
   trash
-  node
   mongodb
   tree
   ack
@@ -63,13 +59,11 @@ apps=(
   google-chrome
   qlcolorcode
   firefox
-  vagrant
   flash
   iterm2
   sublime-text3
   virtualbox
   atom
-  mailbox
   quicklook-json
   skype
   webstorm
@@ -111,3 +105,11 @@ npm install -g grunt-cli gulp bower karma nodemon mocha meanio yo cordova pm2 fo
 
 curl -L http://install.ohmyz.sh | sh
 
+touch ~/.profile 
+
+# Install nvm 
+curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | bash
+
+nvm install stable
+
+nvm use stable
